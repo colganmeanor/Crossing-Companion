@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project will be a companion guide for players of Nintendo's Animal Crossing New Horizons. The app will show users what bugs, fish, and sea creatures are available RIGHT THIS MOMENT.
+
 ## Available Scripts
 
 In the project directory, you can run:
