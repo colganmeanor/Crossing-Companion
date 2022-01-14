@@ -1,8 +1,9 @@
 import react, {useState, useEffect} from 'react';
+import Clock from './Components/Clock';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
 
   const [currentTime, setCurrentTime] = useState(new Date());
     useEffect(() => {
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <div className="App">
+      <Clock currentTime={currentTime}/>
       <p>This is gonna be the app!</p>
     </div>
   );
