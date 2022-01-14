@@ -1,23 +1,17 @@
+import react, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [currentTime, setCurrentTime] = useState(new Date());
+    useEffect(() => {
+           setInterval(() => setCurrentTime(new Date()), 30000);
+    }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>This is gonna be the app!</p>
     </div>
   );
 }
