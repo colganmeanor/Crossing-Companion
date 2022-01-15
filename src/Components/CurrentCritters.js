@@ -19,9 +19,9 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
         return <CritterCard critter={bugs} />
     })
     
-    console.log('Current Fish',currentFishies)
-    console.log('Current Sea Creatures', currentSeaCreatures)
-    console.log('Current Bugs', currentBugs)
+    // console.log('Current Fish',currentFishies)
+    // console.log('Current Sea Creatures', currentSeaCreatures)
+    // console.log('Current Bugs', currentBugs)
 
     return (
         <main>

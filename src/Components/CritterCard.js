@@ -4,7 +4,10 @@ import '../Styles/CritterCard.css'
 const CritterCard = ({critter}) => {
     return (
         <div className="critter-card">
-            {critter.name['name-EUen']}
+            <div className="critter-image-container">
+                <img className="critter-icon" src={critter['icon_uri']}></img>
+            </div>
+            <p>{critter.name['name-EUen']}</p>
         </div>
     )
 }

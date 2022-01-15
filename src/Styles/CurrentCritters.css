@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
     --auto-grid-min-size: 6.5rem;
-    grid-template-rows: 50px;
+    grid-template-rows: 100px;
     align-items: center;
     justify-items: center;
     justify-content: center;
