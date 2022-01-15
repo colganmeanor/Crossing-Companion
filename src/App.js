@@ -3,10 +3,12 @@ import Clock from './Components/Clock';
 import apiCalls from './ApiCalls';
 import logo from './logo.svg';
 import './App.css';
+import { dataOrg } from './utilities';
 
 const App = () => {
 
   
+
 
   const [currentTime, setCurrentTime] = useState(new Date());
   const [fish, setFish] = useState({fish: {}})
@@ -14,9 +16,9 @@ const App = () => {
   const [bugs, setBugs] = useState({bugs: {}})
 
   const filterData = (data) => {
-    setFish(data[0])
-    setSeaCreatures(data[1])
-    setBugs(data[2])
+    setFish({fish: dataOrg(data[0])})
+    setSeaCreatures({seaCreatures:dataOrg(data[1])})
+    setBugs({bugs: dataOrg(data[2])})
   }
 
 
