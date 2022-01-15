@@ -1,20 +1,15 @@
 import react from "react";
 import CritterCard from "./CritterCard";
+import { findCurrentCritters } from "../utilities";
+
 
 const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
 
     // console.log(currentTime.getHours())
-    const findCurrentCritters = (arr, time) => {
-        const result = arr.filter((critter) => {
-            return critter.availability['month-array-northern'].includes(time.getMonth() + 1)
-        }).filter((critter) => {
-            return critter.availability['time-array'].includes(time.getHours())
-        })
-        return result
-    }
     
     
-    const currentFishies = findCurrentCritters(fish, currentTime)
+    
+    const currentFishies = findCurrentCritters(fish, currentTime, 'southern')
     console.log(currentFishies)
     
     const fishCritters = fish.map((fish) => {
