@@ -1,9 +1,9 @@
 import react from "react";
 
-const CritterCard = ({fish}) => {
+const CritterCard = ({critter}) => {
     return (
         <div>
-            {fish.name['name-EUen']}
+            {critter.name['name-EUen']}
         </div>
     )
 }
