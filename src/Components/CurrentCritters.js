@@ -1,6 +1,7 @@
 import react from "react";
 import CritterCard from "./CritterCard";
 import { findCurrentCritters } from "../utilities";
+import '../Styles/CurrentCritters.css'
 
 
 const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
@@ -24,16 +25,16 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
 
     return (
         <main>
-            <div className="current-fish">
-                <p>FISH:</p>
+            <p>FISH:</p>
+            <div className="current-critters">
                 {currentFishies}
             </div>
-            <div className="current-seacreatures">
-                <p>SEACREATURES:</p>
+            <p>SEACREATURES:</p>
+            <div className="current-critters">
                 {currentSeaCreatures}
             </div>
-            <div className="current-bugs">
-                <p>BUGS:</p>
+            <p>BUGS:</p>
+            <div className="current-critters">
                 {currentBugs}
             </div>
         </main>

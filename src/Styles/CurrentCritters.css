@@ -1,0 +1,9 @@
+.current-critters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    --auto-grid-min-size: 9rem;
+    grid-auto-rows: 50px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
