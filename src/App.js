@@ -1,5 +1,7 @@
 import react, {useState, useEffect} from 'react';
 import Clock from './Components/Clock';
+import CurrentCritters from './Components/CurrentCritters';
+import Footer from './Components/Footer';
 import apiCalls from './ApiCalls';
 import logo from './logo.svg';
 import './App.css';
@@ -30,7 +32,8 @@ const App = () => {
   return (
     <div className="App">
       <Clock currentTime={currentTime}/>
-      <p>This is gonna be the app!</p>
+      <CurrentCritters fish={fish} />
+      <Footer />
     </div>
   );
 }
