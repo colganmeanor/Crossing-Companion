@@ -8,15 +8,15 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
       
     const currentFishies = findCurrentCritters(fish, currentTime, 'northern') 
     .map((fish) => {
-        return <CritterCard critter={fish} />
+        return <CritterCard key={fish.id} critter={fish} />
     })
     const currentSeaCreatures = findCurrentCritters(seaCreatures, currentTime, 'northern')
     .map((seaCreatures) => {
-        return <CritterCard critter={seaCreatures} />
+        return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
     })
     const currentBugs = findCurrentCritters(bugs, currentTime, 'northern')
     .map((bugs) => {
-        return <CritterCard critter={bugs} />
+        return <CritterCard key={bugs.id} critter={bugs} />
     })
     
     // console.log('Current Fish',currentFishies)

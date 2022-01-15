@@ -3,7 +3,8 @@
     position: relative;
     width: 100px;
     height: 100px;
-    overflow-x:auto
+    overflow-x:auto;
+    background: white;
 }
 
 .critter-image-container{
