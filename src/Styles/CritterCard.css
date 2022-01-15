@@ -1,0 +1,17 @@
+.critter-card{
+    border: solid black;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow-x:auto;
+    background: white;
+}
+
+.critter-image-container{
+
+}
+
+.critter-icon{
+    width:auto;
+    height: 50px;
+}

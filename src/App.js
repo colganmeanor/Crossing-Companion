@@ -21,7 +21,7 @@ const App = () => {
   }
 
     useEffect(() => {
-           setInterval(() => setCurrentTime(new Date()), 3000);
+           setInterval(() => setCurrentTime(new Date()), 30000);
     }, []);
 
     useEffect(() => {
@@ -32,7 +32,12 @@ const App = () => {
   return (
     <div className="App">
       <Clock currentTime={currentTime}/>
-      <CurrentCritters fish={fish} />
+      {fish && <CurrentCritters 
+      fish={fish} 
+      seaCreatures={seaCreatures} 
+      bugs={bugs} 
+      currentTime={currentTime} 
+      />}
       <Footer />
     </div>
   );

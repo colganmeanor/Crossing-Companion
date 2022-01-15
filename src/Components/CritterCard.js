@@ -1,9 +1,13 @@
 import react from "react";
+import '../Styles/CritterCard.css'
 
-const CritterCard = ({fish}) => {
+const CritterCard = ({critter}) => {
     return (
-        <div>
-            {fish.name['name-EUen']}
+        <div className="critter-card">
+            <div className="critter-image-container">
+                <img className="critter-icon" src={critter['icon_uri']}></img>
+            </div>
+            <p>{critter.name['name-EUen']}</p>
         </div>
     )
 }

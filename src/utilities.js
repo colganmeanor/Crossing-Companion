@@ -6,4 +6,12 @@ export const dataOrg = (obj) => {
     return result
   }
 
+  export const findCurrentCritters = (arr, time, hemi) => {
+    const result = arr.filter((critter) => {
+        return critter.availability[`month-array-${hemi}`].includes(time.getMonth() + 1)
+    }).filter((critter) => {
+        return critter.availability['time-array'].includes(time.getHours())
+    })
+    return result
+}
   

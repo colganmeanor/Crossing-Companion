@@ -1,16 +1,43 @@
 import react from "react";
 import CritterCard from "./CritterCard";
+import { findCurrentCritters } from "../utilities";
+import '../Styles/CurrentCritters.css'
 
-const CurrentCritters = ({ fish }) => {
 
-    const fishCritters = fish.map((fish) => {
-        return <CritterCard fish={fish} />
+const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
+      
+    const currentFishies = findCurrentCritters(fish, currentTime, 'northern') 
+    .map((fish) => {
+        return <CritterCard key={fish.id} critter={fish} />
     })
+    const currentSeaCreatures = findCurrentCritters(seaCreatures, currentTime, 'northern')
+    .map((seaCreatures) => {
+        return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
+    })
+    const currentBugs = findCurrentCritters(bugs, currentTime, 'northern')
+    .map((bugs) => {
+        return <CritterCard key={bugs.id} critter={bugs} />
+    })
+    
+    // console.log('Current Fish',currentFishies)
+    // console.log('Current Sea Creatures', currentSeaCreatures)
+    // console.log('Current Bugs', currentBugs)
 
     return (
-        <div>
-            {fishCritters}
-        </div>
+        <main>
+            <p>FISH:</p>
+            <div className="current-critters">
+                {currentFishies}
+            </div>
+            <p>SEACREATURES:</p>
+            <div className="current-critters">
+                {currentSeaCreatures}
+            </div>
+            <p>BUGS:</p>
+            <div className="current-critters">
+                {currentBugs}
+            </div>
+        </main>
     )
 }
 
