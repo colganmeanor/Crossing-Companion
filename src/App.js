@@ -16,9 +16,9 @@ const App = () => {
   const [bugs, setBugs] = useState({bugs: {}})
 
   const filterData = (data) => {
-    setFish({fish: dataOrg(data[0])})
-    setSeaCreatures({seaCreatures:dataOrg(data[1])})
-    setBugs({bugs: dataOrg(data[2])})
+    setFish(dataOrg(data[0]))
+    setSeaCreatures(dataOrg(data[1]))
+    setBugs(dataOrg(data[2]))
   }
 
 
