@@ -1,4 +1,6 @@
 .critter-card{
     border: solid black;
-    width: fit-content;
+    position: relative;
+    width: 100px;
+    height: 50px;
 }
