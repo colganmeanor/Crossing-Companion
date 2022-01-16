@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import Header from './Components/Header';
 import Clock from './Components/Clock';
 import CurrentCritters from './Components/CurrentCritters';
+import Compendium from './Components/Compendium';
 import Footer from './Components/Footer';
 import apiCalls from './ApiCalls';
 import './App.css';
@@ -33,12 +34,17 @@ const App = () => {
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
-      {fish && <CurrentCritters 
+      <CurrentCritters 
       fish={fish} 
       seaCreatures={seaCreatures} 
       bugs={bugs} 
       currentTime={currentTime} 
-      />}
+      />
+      <Compendium 
+      fish={fish} 
+      seaCreatures={seaCreatures} 
+      bugs={bugs} 
+      />
       <Footer />
     </div>
   );
