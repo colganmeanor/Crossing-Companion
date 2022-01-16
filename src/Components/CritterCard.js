@@ -7,7 +7,7 @@ const CritterCard = ({critter}) => {
             <div className="critter-image-container">
                 <img className="critter-icon" src={critter['icon_uri']}></img>
             </div>
-            <p>{critter.name['name-EUen']}</p>
+            <p>{critter.displayName}</p>
         </div>
     )
 }
