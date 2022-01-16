@@ -25,15 +25,15 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
 
     return (
         <main>
-            <p>FISH:</p>
+            <p className="critter-title">FISH:</p>
             <div className="current-critters">
                 {currentFishies}
             </div>
-            <p>SEACREATURES:</p>
+            <p className="critter-title">SEA CREATURES:</p>
             <div className="current-critters">
                 {currentSeaCreatures}
             </div>
-            <p>BUGS:</p>
+            <p className="critter-title">BUGS:</p>
             <div className="current-critters">
                 {currentBugs}
             </div>

@@ -1,7 +1,18 @@
+const nameCleaner = (string) => {
+  const separatedWords = string.toLowerCase().split(' ');
+   for (let i = 0; i < separatedWords.length; i++) {
+      separatedWords[i] = separatedWords[i].charAt(0).toUpperCase() +
+      separatedWords[i].substring(1);
+   }
+   return separatedWords.join(' ');
+}
+
 export const dataOrg = (obj) => {
     const objKeys = Object.keys(obj)
     const result = objKeys.map((key) => {
       return obj[key]
+    }).map((obj) => {
+      return {caught: false, displayName: nameCleaner(obj.name['name-EUen']), ...obj}
     })
     return result
   }

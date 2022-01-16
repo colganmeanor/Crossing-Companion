@@ -1,8 +1,8 @@
 .critter-card{
-    border: solid black;
+    border: solid black 2px;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 95%;
+    height: 115px;
     overflow-x:auto;
     background: white;
 }

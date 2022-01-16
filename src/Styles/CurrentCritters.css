@@ -1,10 +1,16 @@
 .current-critters {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
-    --auto-grid-min-size: 6.5rem;
-    grid-template-rows: 100px;
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(8rem, 3fr));
     align-items: center;
     justify-items: center;
     justify-content: center;
-    
+    width: 70%;
+    align-content: center;
+    justify-self: center;
+    margin: auto;
+}
+
+.critter-title{
+    font-weight: 700;
 }
