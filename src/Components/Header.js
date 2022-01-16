@@ -4,9 +4,6 @@ import { NavLink } from 'react-router-dom'
 const Header = () => {
     return(
         <div className="header">
-            <div className='header-logo-section'>
-                <p>logo will go here</p>
-            </div>
             <div className='header-link-section'>
                 <NavLink to='/' className={({ isActive }) => (isActive ? 'nav-active' : 'inactive')}>Current Critters</NavLink>
                 <NavLink to='/all-critters' className={({ isActive }) => (isActive ? 'nav-active' : 'inactive')}>All Critters</NavLink>
