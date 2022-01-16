@@ -1,4 +1,4 @@
-import react from "react";
+// import react from "react";
 import CritterCard from "./CritterCard";
 import { findCurrentCritters } from "../utilities";
 import '../Styles/CurrentCritters.css'
