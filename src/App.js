@@ -1,9 +1,9 @@
-import react, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
+import Header from './Components/Header';
 import Clock from './Components/Clock';
 import CurrentCritters from './Components/CurrentCritters';
 import Footer from './Components/Footer';
 import apiCalls from './ApiCalls';
-import logo from './logo.svg';
 import './App.css';
 import { dataOrg } from './utilities';
 
@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Header />
       <Clock currentTime={currentTime}/>
       {fish && <CurrentCritters 
       fish={fish} 
