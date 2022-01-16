@@ -2,6 +2,8 @@ export const dataOrg = (obj) => {
     const objKeys = Object.keys(obj)
     const result = objKeys.map((key) => {
       return obj[key]
+    }).map((obj) => {
+      return {caught: false, ...obj}
     })
     return result
   }
