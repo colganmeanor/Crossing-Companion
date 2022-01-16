@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Clock from './Components/Clock';
 import CurrentCritters from './Components/CurrentCritters';
@@ -34,17 +35,25 @@ const App = () => {
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
-      <CurrentCritters 
-      fish={fish} 
-      seaCreatures={seaCreatures} 
-      bugs={bugs} 
-      currentTime={currentTime} 
-      />
-      <Compendium 
-      fish={fish} 
-      seaCreatures={seaCreatures} 
-      bugs={bugs} 
-      />
+      
+      
+      <Routes>
+        <Route path='/' element={
+          <CurrentCritters 
+          fish={fish} 
+          seaCreatures={seaCreatures} 
+          bugs={bugs} 
+          currentTime={currentTime} 
+          />} 
+        />
+        <Route path='/all-critters' element={
+          <Compendium 
+          fish={fish} 
+          seaCreatures={seaCreatures} 
+          bugs={bugs} 
+          />} 
+        />
+      </Routes>
       <Footer />
     </div>
   );
