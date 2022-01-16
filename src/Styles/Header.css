@@ -12,3 +12,11 @@
     display: flex;
     width: 30%;
 }
+
+.nav-active {
+    color: blue;
+}
+
+.inactive {
+    color: black;
+}

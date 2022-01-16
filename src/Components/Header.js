@@ -1,4 +1,5 @@
 import '../Styles/Header.css'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
     return(
@@ -7,9 +8,9 @@ const Header = () => {
                 <p>logo will go here</p>
             </div>
             <div className='header-link-section'>
-                <p>Link to Current Critters Page</p>
-                <p>Link to All Critters Page Page</p>
-                <p>Link to About Page</p>
+                <NavLink to='/' className={({ isActive }) => (isActive ? 'nav-active' : 'inactive')}>Current Critters</NavLink>
+                <NavLink to='/all-critters' className={({ isActive }) => (isActive ? 'nav-active' : 'inactive')}>All Critters</NavLink>
+                <NavLink to='/about' className={({ isActive }) => (isActive ? 'nav-active' : 'inactive')}>About</NavLink>
             </div>
         </div>
     )

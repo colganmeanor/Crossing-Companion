@@ -35,8 +35,6 @@ const App = () => {
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
-      
-      
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
