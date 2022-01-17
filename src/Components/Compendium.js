@@ -1,4 +1,5 @@
 import CritterCard from "./CritterCard";
+import PropTypes from "prop-types";
 import '../Styles/CritterContainers.css'
 
 const Compendium = ({ fish, seaCreatures, bugs }) => {
@@ -31,6 +32,12 @@ const Compendium = ({ fish, seaCreatures, bugs }) => {
             </div>
         </main>
     )
+}
+
+Compendium.propTypes = {
+    fish: PropTypes.array.isRequired,
+    seaCreatures: PropTypes.array.isRequired,
+    bugs: PropTypes.array.isRequired,
 }
 
 export default Compendium
