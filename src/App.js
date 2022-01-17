@@ -16,17 +16,13 @@ const App = () => {
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
 
 
-  const filterData = (data) => {
-    setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])})
-  }
-
     useEffect(() => {
            setInterval(() => setCurrentTime(new Date()), 30000);
     }, []);
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => filterData(data))
+          .then(data => setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])}))
     }, [])
 
   return (
@@ -38,12 +34,14 @@ const App = () => {
         <Route path='/' element={
           <CurrentCritters 
           critters={critters}
-          currentTime={currentTime} 
+          currentTime={currentTime}
+          setCritters={setCritters} 
           />} 
         />
         <Route path='/all-critters' element={
           <Compendium 
           critters={critters}
+          setCritters={setCritters}
           />} 
         />
       </Routes>
