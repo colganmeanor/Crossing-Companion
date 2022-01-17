@@ -5,22 +5,22 @@ import { findCurrentCritters } from "../utilities";
 import '../Styles/CritterContainers.css'
 
 
-const CurrentCritters = ({ critters, currentTime }) => {
+const CurrentCritters = ({ critters, currentTime, handleCritterChange }) => {
 
     const [hemisphere, setHemi] = useState('northern')
 
       
     const currentFish = findCurrentCritters(critters.fish, currentTime, hemisphere) 
     .map((fish) => {
-        return <CritterCard key={fish.id} critter={fish} />
+        return <CritterCard key={fish.id} critter={fish} handleCritterChange={handleCritterChange} />
     })
     const currentSeaCreatures = findCurrentCritters(critters.seaCreatures, currentTime, hemisphere)
     .map((seaCreatures) => {
-        return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
+        return <CritterCard key={seaCreatures.id} critter={seaCreatures} handleCritterChange={handleCritterChange}/>
     })
     const currentBugs = findCurrentCritters(critters.bugs, currentTime, hemisphere)
     .map((bugs) => {
-        return <CritterCard key={bugs.id} critter={bugs} />
+        return <CritterCard key={bugs.id} critter={bugs} handleCritterChange={handleCritterChange}/>
     })
    
 

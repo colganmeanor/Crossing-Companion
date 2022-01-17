@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { findOneCritter } from '../utilities';
 import '../Styles/CritterCard.css'
 
-const CritterCard = ({critter}) => {
+const CritterCard = ({critter, handleCritterChange }) => {
     return (
-        <div className="critter-card">
+        <div className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
             <div className="critter-image-container">
                 <img className="critter-icon" src={critter['icon_uri']}></img>
             </div>
@@ -20,3 +21,6 @@ CritterCard.propTypes = {
 }
 
 export default CritterCard
+
+// on click functionality psuedocoding:
+
