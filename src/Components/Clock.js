@@ -12,7 +12,7 @@ const Clock = ({ currentTime }) => {
 }
 
 Clock.propTypes = {
-    currentTime: PropTypes.object
+    currentTime: PropTypes.object.isRequired
   };
 
 
