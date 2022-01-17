@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import PropTypes from "prop-types";
 import CritterCard from "./CritterCard";
 import { findCurrentCritters } from "../utilities";
 import '../Styles/CritterContainers.css'
@@ -43,6 +44,13 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
             </div>
         </main>
     )
+}
+
+CurrentCritters.propTypes = {
+    fish: PropTypes.array.isRequired,
+    seaCreatures: PropTypes.array.isRequired,
+    bugs: PropTypes.array.isRequired,
+    currentTime: PropTypes.object.isRequired
 }
 
 export default CurrentCritters
