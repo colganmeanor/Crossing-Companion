@@ -1,4 +1,4 @@
-import react from "react";
+import PropTypes from 'prop-types';
 import '../Styles/Clock.css'
 
 const Clock = ({ currentTime }) => {
@@ -9,7 +9,11 @@ const Clock = ({ currentTime }) => {
             <h2 className="clock-date">{currentTime.toLocaleDateString()}</h2>
         </div>
     )
-
 }
+
+Clock.propTypes = {
+    currentTime: PropTypes.object
+  };
+
 
 export default Clock
