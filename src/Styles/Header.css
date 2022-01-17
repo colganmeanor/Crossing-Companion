@@ -15,24 +15,35 @@
     display: flex;
     justify-content: space-evenly;
     width: 30%;
+    height: inherit;
     font-weight: 700;
+    align-items: center;
 }
 
 .nav-active {
     color: black;
     background-color: white;
-    display: block;
-    padding: 17px 16px;
+    padding: 16px 28px;
 }
 
 .inactive {
     color: white;
     background-color: #4e9ce4;
-    display: block;
-    padding: 17px 16px;
+    padding: 16px 28px;
 }
 
 .inactive:hover {
     background-color: white;
     color: black;
 }
+
+
+@media only screen and (max-width: 1425px) {
+    .nav-active {
+        padding: 8px 28px;
+    }
+    
+    .inactive {
+        padding: 8px 28px;
+    }
+  }
