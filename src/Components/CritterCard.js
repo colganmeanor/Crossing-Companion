@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
+import greenCheck from '../images/green-check-mark.svg'
 import '../Styles/CritterCard.css'
 
 const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
@@ -17,10 +18,10 @@ const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
     return (
         <div className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
             <div className="critter-image-container">
+                {caughtStatus && <img className='critter-caught-checkmark' src={greenCheck}></img>}
                 <img className="critter-icon" src={critter['icon_uri']}></img>
             </div>
             <p>{critter.displayName}</p>
-            <p>{caughtStatus && 'caught'}</p>
         </div>
     )
 }
