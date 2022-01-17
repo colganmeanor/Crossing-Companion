@@ -1,4 +1,4 @@
-import react from "react";
+import PropTypes from 'prop-types';
 import '../Styles/CritterCard.css'
 
 const CritterCard = ({critter}) => {
@@ -10,6 +10,10 @@ const CritterCard = ({critter}) => {
             <p>{critter.displayName}</p>
         </div>
     )
+}
+
+CritterCard.propTypes = {
+    critter: PropTypes.object.isRequired
 }
 
 export default CritterCard
