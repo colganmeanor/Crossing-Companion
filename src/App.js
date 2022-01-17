@@ -39,7 +39,7 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('seaCreatures', data[1]), bugs: dataOrg('bugs', data[2])}))
+          .then(data => setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])}))
     }, [])
 
   return (
