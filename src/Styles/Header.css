@@ -15,10 +15,11 @@
     display: flex;
     justify-content: space-evenly;
     width: 30%;
+    font-weight: 700;
 }
 
 .nav-active {
-    color: #587b9b;
+    color: black;
     background-color: white;
     display: block;
     padding: 17px 16px;
@@ -29,4 +30,9 @@
     background-color: #4e9ce4;
     display: block;
     padding: 17px 16px;
+}
+
+.inactive:hover {
+    background-color: white;
+    color: black;
 }
