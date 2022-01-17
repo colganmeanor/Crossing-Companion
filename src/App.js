@@ -14,7 +14,24 @@ const App = () => {
 
   const [currentTime, setCurrentTime] = useState(new Date());
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
+  const [caughtCritters, setCaughtCritters] = useState([])
 
+  const catchCritter = (name) => {
+    let prevArray = caughtCritters
+    setCaughtCritters([...prevArray, name])
+  }
+
+  const removeCritter = (name) => {
+    let prevArray = caughtCritters
+    let newArray = prevArray.filter((item) => {
+      return item !== name
+    })
+    setCaughtCritters(newArray)
+  }
+
+  const handleCritterChange = (name) => {
+    caughtCritters.includes(name) ? removeCritter(name) : catchCritter(name)
+  }
 
     useEffect(() => {
            setInterval(() => setCurrentTime(new Date()), 30000);
@@ -22,7 +39,7 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])}))
+          .then(data => setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('seaCreatures', data[1]), bugs: dataOrg('bugs', data[2])}))
     }, [])
 
   return (
@@ -35,13 +52,13 @@ const App = () => {
           <CurrentCritters 
           critters={critters}
           currentTime={currentTime}
-          setCritters={setCritters} 
+          handleCritterChange={handleCritterChange} 
           />} 
         />
         <Route path='/all-critters' element={
           <Compendium 
           critters={critters}
-          setCritters={setCritters}
+          handleCritterChange={handleCritterChange}
           />} 
         />
       </Routes>
