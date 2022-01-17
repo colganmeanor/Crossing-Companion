@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import CritterCard from "./CritterCard";
 import { findCurrentCritters } from "../utilities";
-import '../Styles/CurrentCritters.css'
+import '../Styles/CritterContainers.css'
 
 
 const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {

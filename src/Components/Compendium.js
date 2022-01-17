@@ -1,5 +1,5 @@
 import CritterCard from "./CritterCard";
-import '../Styles/CurrentCritters.css'
+import '../Styles/CritterContainers.css'
 
 const Compendium = ({ fish, seaCreatures, bugs }) => {
 
