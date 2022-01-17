@@ -52,12 +52,14 @@ const App = () => {
           <CurrentCritters 
           critters={critters}
           currentTime={currentTime}
+          caughtCritters={caughtCritters}
           handleCritterChange={handleCritterChange} 
           />} 
         />
         <Route path='/all-critters' element={
           <Compendium 
           critters={critters}
+          caughtCritters={caughtCritters}
           handleCritterChange={handleCritterChange}
           />} 
         />

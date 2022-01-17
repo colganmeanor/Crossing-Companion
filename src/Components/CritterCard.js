@@ -1,14 +1,26 @@
 import PropTypes from 'prop-types';
-import { findOneCritter } from '../utilities';
+import { useState, useEffect } from 'react';
 import '../Styles/CritterCard.css'
 
-const CritterCard = ({critter, handleCritterChange }) => {
+const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
+    
+    const [caughtStatus, setStatus] = useState(false)
+    
+    const caughtTracker = (arr) => {
+        arr.includes(critter.displayName) ? setStatus(true) : setStatus(false)
+    }
+
+    useEffect(() => {
+        caughtTracker(caughtCritters)
+    }, [caughtCritters])
+    
     return (
         <div className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
             <div className="critter-image-container">
                 <img className="critter-icon" src={critter['icon_uri']}></img>
             </div>
             <p>{critter.displayName}</p>
+            <p>{caughtStatus && 'caught'}</p>
         </div>
     )
 }
@@ -22,5 +34,4 @@ CritterCard.propTypes = {
 
 export default CritterCard
 
-// on click functionality psuedocoding:
 

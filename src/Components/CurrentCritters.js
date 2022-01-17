@@ -5,22 +5,22 @@ import { findCurrentCritters } from "../utilities";
 import '../Styles/CritterContainers.css'
 
 
-const CurrentCritters = ({ critters, currentTime, handleCritterChange }) => {
+const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterChange }) => {
 
     const [hemisphere, setHemi] = useState('northern')
 
       
     const currentFish = findCurrentCritters(critters.fish, currentTime, hemisphere) 
     .map((fish) => {
-        return <CritterCard key={fish.id} critter={fish} handleCritterChange={handleCritterChange} />
+        return <CritterCard key={fish.id} critter={fish} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange} />
     })
     const currentSeaCreatures = findCurrentCritters(critters.seaCreatures, currentTime, hemisphere)
     .map((seaCreatures) => {
-        return <CritterCard key={seaCreatures.id} critter={seaCreatures} handleCritterChange={handleCritterChange}/>
+        return <CritterCard key={seaCreatures.id} critter={seaCreatures} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
     const currentBugs = findCurrentCritters(critters.bugs, currentTime, hemisphere)
     .map((bugs) => {
-        return <CritterCard key={bugs.id} critter={bugs} handleCritterChange={handleCritterChange}/>
+        return <CritterCard key={bugs.id} critter={bugs} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
    
 
