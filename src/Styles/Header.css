@@ -1,0 +1,38 @@
+.header {
+    border-bottom: solid black 1px;
+    background: #4e9ce4;
+    height: 7%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-link-section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    font-weight: 700;
+}
+
+.nav-active {
+    color: black;
+    background-color: white;
+    display: block;
+    padding: 17px 16px;
+}
+
+.inactive {
+    color: white;
+    background-color: #4e9ce4;
+    display: block;
+    padding: 17px 16px;
+}
+
+.inactive:hover {
+    background-color: white;
+    color: black;
+}

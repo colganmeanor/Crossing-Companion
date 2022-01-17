@@ -1,9 +1,11 @@
-import react, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Header from './Components/Header';
 import Clock from './Components/Clock';
 import CurrentCritters from './Components/CurrentCritters';
+import Compendium from './Components/Compendium';
 import Footer from './Components/Footer';
 import apiCalls from './ApiCalls';
-import logo from './logo.svg';
 import './App.css';
 import { dataOrg } from './utilities';
 
@@ -31,13 +33,25 @@ const App = () => {
 
   return (
     <div className="App">
+      <Header />
       <Clock currentTime={currentTime}/>
-      {fish && <CurrentCritters 
-      fish={fish} 
-      seaCreatures={seaCreatures} 
-      bugs={bugs} 
-      currentTime={currentTime} 
-      />}
+      <Routes>
+        <Route path='/' element={
+          <CurrentCritters 
+          fish={fish} 
+          seaCreatures={seaCreatures} 
+          bugs={bugs} 
+          currentTime={currentTime} 
+          />} 
+        />
+        <Route path='/all-critters' element={
+          <Compendium 
+          fish={fish} 
+          seaCreatures={seaCreatures} 
+          bugs={bugs} 
+          />} 
+        />
+      </Routes>
       <Footer />
     </div>
   );
