@@ -17,15 +17,15 @@ const Compendium = ({ fish, seaCreatures, bugs }) => {
 
     return (
         <main>
-            <p className="critter-title">FISH:</p>
+            <p className="critter-title">ALL FISH:</p>
             <div className="current-critters">
                 {allFish}
             </div>
-            <p className="critter-title">SEA CREATURES:</p>
+            <p className="critter-title">ALL SEA CREATURES:</p>
             <div className="current-critters">
                 {allSeaCreatures}
             </div>
-            <p className="critter-title">BUGS:</p>
+            <p className="critter-title">ALL BUGS:</p>
             <div className="current-critters">
                 {allBugs}
             </div>
