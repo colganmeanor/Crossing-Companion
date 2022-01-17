@@ -9,6 +9,7 @@ import apiCalls from './ApiCalls';
 import './App.css';
 import { dataOrg } from './utilities';
 
+
 const App = () => {
 
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -35,6 +36,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
+      {/* <img src={'src/Styles/images/cloud1.svg'}/> */}
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
