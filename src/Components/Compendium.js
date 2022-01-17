@@ -35,9 +35,9 @@ const Compendium = ({ fish, seaCreatures, bugs }) => {
 }
 
 Compendium.propTypes = {
-    fish: PropTypes.array.isRequired,
-    seaCreatures: PropTypes.array.isRequired,
-    bugs: PropTypes.array.isRequired,
+    fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+    seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+    bugs: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default Compendium

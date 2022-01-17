@@ -13,7 +13,10 @@ const CritterCard = ({critter}) => {
 }
 
 CritterCard.propTypes = {
-    critter: PropTypes.object.isRequired
+    critter: PropTypes.shape({
+        'icon_uri': PropTypes.string,
+        displayName: PropTypes.string
+      }).isRequired
 }
 
 export default CritterCard

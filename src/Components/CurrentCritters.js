@@ -47,9 +47,9 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
 }
 
 CurrentCritters.propTypes = {
-    fish: PropTypes.array.isRequired,
-    seaCreatures: PropTypes.array.isRequired,
-    bugs: PropTypes.array.isRequired,
+    fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+    seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+    bugs: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentTime: PropTypes.object.isRequired
 }
 
