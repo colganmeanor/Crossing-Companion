@@ -13,14 +13,11 @@ import { dataOrg } from './utilities';
 const App = () => {
 
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [fish, setFish] = useState([])
-  const [seaCreatures, setSeaCreatures] = useState([])
-  const [bugs, setBugs] = useState([])
+  const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
+
 
   const filterData = (data) => {
-    setFish(dataOrg(data[0]))
-    setSeaCreatures(dataOrg(data[1]))
-    setBugs(dataOrg(data[2]))
+    setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])})
   }
 
     useEffect(() => {
@@ -40,17 +37,13 @@ const App = () => {
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
-          fish={fish} 
-          seaCreatures={seaCreatures} 
-          bugs={bugs} 
+          critters={critters}
           currentTime={currentTime} 
           />} 
         />
         <Route path='/all-critters' element={
           <Compendium 
-          fish={fish} 
-          seaCreatures={seaCreatures} 
-          bugs={bugs} 
+          critters={critters}
           />} 
         />
       </Routes>

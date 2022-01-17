@@ -5,20 +5,20 @@ import { findCurrentCritters } from "../utilities";
 import '../Styles/CritterContainers.css'
 
 
-const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
+const CurrentCritters = ({ critters, currentTime }) => {
 
     const [hemisphere, setHemi] = useState('northern')
 
       
-    const currentFish = findCurrentCritters(fish, currentTime, hemisphere) 
+    const currentFish = findCurrentCritters(critters.fish, currentTime, hemisphere) 
     .map((fish) => {
         return <CritterCard key={fish.id} critter={fish} />
     })
-    const currentSeaCreatures = findCurrentCritters(seaCreatures, currentTime, hemisphere)
+    const currentSeaCreatures = findCurrentCritters(critters.seaCreatures, currentTime, hemisphere)
     .map((seaCreatures) => {
         return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
     })
-    const currentBugs = findCurrentCritters(bugs, currentTime, hemisphere)
+    const currentBugs = findCurrentCritters(critters.bugs, currentTime, hemisphere)
     .map((bugs) => {
         return <CritterCard key={bugs.id} critter={bugs} />
     })
@@ -46,11 +46,11 @@ const CurrentCritters = ({ fish, seaCreatures, bugs, currentTime }) => {
     )
 }
 
-CurrentCritters.propTypes = {
-    fish: PropTypes.arrayOf(PropTypes.object).isRequired,
-    seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
-    bugs: PropTypes.arrayOf(PropTypes.object).isRequired,
-    currentTime: PropTypes.object.isRequired
-}
+// CurrentCritters.propTypes = {
+//     fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     bugs: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     currentTime: PropTypes.object.isRequired
+// }
 
 export default CurrentCritters

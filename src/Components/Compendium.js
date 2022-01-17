@@ -2,17 +2,17 @@ import CritterCard from "./CritterCard";
 import PropTypes from "prop-types";
 import '../Styles/CritterContainers.css'
 
-const Compendium = ({ fish, seaCreatures, bugs }) => {
+const Compendium = ({ critters }) => {
 
-    const allFish = fish.map((fish) => {
+    const allFish = critters.fish.map((fish) => {
         return <CritterCard key={fish.id} critter={fish} />
     })
 
-    const allSeaCreatures = seaCreatures.map((seaCreatures) => {
+    const allSeaCreatures = critters.seaCreatures.map((seaCreatures) => {
         return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
     })
 
-    const allBugs = bugs.map((bugs) => {
+    const allBugs = critters.bugs.map((bugs) => {
         return <CritterCard key={bugs.id} critter={bugs} />
     })
 
@@ -34,10 +34,10 @@ const Compendium = ({ fish, seaCreatures, bugs }) => {
     )
 }
 
-Compendium.propTypes = {
-    fish: PropTypes.arrayOf(PropTypes.object).isRequired,
-    seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
-    bugs: PropTypes.arrayOf(PropTypes.object).isRequired
-}
+// Compendium.propTypes = {
+//     fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+//     bugs: PropTypes.arrayOf(PropTypes.object).isRequired
+// }
 
 export default Compendium
