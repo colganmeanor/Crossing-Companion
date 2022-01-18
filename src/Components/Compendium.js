@@ -19,14 +19,14 @@ const Compendium = ({ critters, caughtCritters, handleCritterChange }) => {
     return (
         <main>
             <p className="critter-title">ALL FISH:</p>
-            <div className="current-critters">
+            <div className="current-critters" data-cy='all-fish-container'>
                 {allFish}
             </div>
-            <p className="critter-title">ALL SEA CREATURES:</p>
+            <p className="critter-title" data-cy='all-sea-creatures-container'>ALL SEA CREATURES:</p>
             <div className="current-critters">
                 {allSeaCreatures}
             </div>
-            <p className="critter-title">ALL BUGS:</p>
+            <p className="critter-title" data-cy='all-bugs-container'>ALL BUGS:</p>
             <div className="current-critters">
                 {allBugs}
             </div>

@@ -35,12 +35,23 @@ const App = () => {
   }
 
     useEffect(() => {
+      const savedData = localStorage.getItem('caught critters')
+      if (savedData) {
+        setCaughtCritters(JSON.parse(savedData))
+      }
+    }, [])
+
+    useEffect(() => {
+      localStorage.setItem('caught critters', JSON.stringify(caughtCritters))
+    })
+
+    useEffect(() => {
            setInterval(() => setCurrentTime(new Date()), 30000);
     }, []);
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])}))
+          .then(data => setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])}))
     }, [])
 
   return (

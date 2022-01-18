@@ -7,12 +7,12 @@ const nameCleaner = (string) => {
    return separatedWords.join(' ');
 }
 
-export const dataOrg = (obj) => {
+export const dataOrg = (type, obj) => {
     const objKeys = Object.keys(obj)
     const result = objKeys.map((key) => {
       return obj[key]
     }).map((obj) => {
-      return {caught: false, displayName: nameCleaner(obj.name['name-EUen']), ...obj}
+      return {type: type, caught: false, displayName: nameCleaner(obj.name['name-EUen']), ...obj}
     })
     return result
   }
