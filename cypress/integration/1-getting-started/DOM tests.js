@@ -3,6 +3,18 @@
 describe('Crossing Companion - Current Critters - DOM', () => {
   beforeEach(() => {
 
+    cy.intercept('GET', 'v1/fish/', {
+        fixture: 'fish.json'
+    })
+
+    cy.intercept('GET', 'v1/sea/', {
+      fixture: 'seacreatures.json'
+  })
+
+  cy.intercept('GET', 'v1/bugs/', {
+    fixture: 'bugs.json'
+})
+
     cy.visit('http://localhost:3000/')
   })
 
