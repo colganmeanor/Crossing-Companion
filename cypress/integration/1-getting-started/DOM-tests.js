@@ -131,3 +131,29 @@ describe('Crossing Companion - All Critters - DOM', () => {
   })
 
 })
+
+describe('Crossing Companion - Oops Page - DOM', () => {
+  beforeEach(() => {
+
+    cy.visit('http://localhost:3000/best-critters')
+  })
+
+  it('should show a prominent 404 Page not Found message', () => {
+    cy.get('[data-cy=oops-page]')
+      .should('exist')
+      .contains('404 - Not Found')
+  })
+
+  it('should have links to help the user return', () => {
+    cy.get('[data-cy=oops-link-home]')
+    .should('exist')
+
+    .get('[data-cy=oops-link-current-critters]')
+    .should('exist')
+
+    .get('[data-cy=oops-link-all-critters]')
+    .should('exist')
+  })
+
+
+})
