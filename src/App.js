@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Clock from './Components/Clock';
+import About from './Components/About';
 import CurrentCritters from './Components/CurrentCritters';
 import Compendium from './Components/Compendium';
 import Footer from './Components/Footer';
