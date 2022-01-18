@@ -14,7 +14,7 @@ const About = () => {
             </div>
             <p>🌎 On the Current Critters Page - Choose between southern and northern hemisphere to see what's going on at the other end of the world. 🌎</p>
             <p>From either page - Click a critter card to mark it as caught for future sessions in this application. You'll see a green check mark on cards for critters you have caught.</p>
-            <p>This application pulls all of its data from the public API - acnhapi.com. This application holds no official affliation with Nintendo or Animal Crossing.</p>
+            <p>This application pulls all of its data from the public API - acnhapi.com. This application holds no official affiliation with Nintendo or Animal Crossing.</p>
         </div>
     )
 }
