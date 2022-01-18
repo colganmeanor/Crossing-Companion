@@ -1,7 +1,7 @@
 .critter-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(8rem, 3fr));
+    grid-template-columns: repeat(auto-fill, minmax(8rem, 2fr));
+    grid-template-rows: repeat(auto-fit, minmax(8rem, 3fr));
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -24,4 +24,10 @@
     background: white;
     color: black;
     border: solid black 1px;
+    font-weight: 600;
+}
+
+.set-hemisphere-button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
 }
