@@ -1,0 +1,21 @@
+.oops-page {
+    border: solid black 1px;
+    background: white;
+    width: 60%;
+    height: 20%;
+    padding: 2%;
+    border-radius: 10%;
+    margin:auto;
+    
+}
+
+.oops-link-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.oops-link {
+    font-weight: 600;
+    color: blue;
+}
+
