@@ -35,6 +35,17 @@ const App = () => {
   }
 
     useEffect(() => {
+      const savedData = localStorage.getItem('caught critters')
+      if (savedData) {
+        setCaughtCritters(JSON.parse(savedData))
+      }
+    }, [])
+
+    useEffect(() => {
+      localStorage.setItem('caught critters', JSON.stringify(caughtCritters))
+    })
+
+    useEffect(() => {
            setInterval(() => setCurrentTime(new Date()), 30000);
     }, []);
 
