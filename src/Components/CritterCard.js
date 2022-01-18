@@ -16,12 +16,12 @@ const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
     }, [caughtCritters])
     
     return (
-        <div className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
+        <div data-cy='critter-card' className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
             <div className="critter-image-container">
-                {caughtStatus && <img className='critter-caught-checkmark' src={greenCheck}></img>}
-                <img className="critter-icon" src={critter['icon_uri']}></img>
+                {caughtStatus && <img data-cy='critter-caught-checkmark' className='critter-caught-checkmark' src={greenCheck}></img>}
+                <img data-cy='critter-icon' className="critter-icon" src={critter['icon_uri']}></img>
             </div>
-            <p>{critter.displayName}</p>
+            <p data-cy='critter-name'>{critter.displayName}</p>
         </div>
     )
 }
