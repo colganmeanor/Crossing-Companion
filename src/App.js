@@ -66,7 +66,8 @@ const App = () => {
       <Clock currentTime={currentTime}/>
 
       <Routes>
-        <Route path='/' element={
+        <Route path='/' element={<About />} />
+        <Route path='/current-critters' element={
           <CurrentCritters 
           critters={critters}
           currentTime={currentTime}
