@@ -92,4 +92,23 @@ describe('Crossing Companion - Actions', () => {
         .url('http://localhost:3000')
     })
   
+    it('should be able to click the Northern and Southern Hemisphere buttons and see different results', () => {
+        cy.visit('http://localhost:3000/')
+        .get('[data-cy=current-bugs-container-northern]')
+        .get('[data-cy=current-fish-container-northern]')
+        .get('[data-cy=current-sea-creatures-container-northern]')
+
+        .get('[data-cy=set-southern]')
+        .click()
+        .get('[data-cy=current-bugs-container-southern]')
+        .get('[data-cy=current-fish-container-southern]')
+        .get('[data-cy=current-sea-creatures-container-southern]')
+
+        .get('[data-cy=set-northern]')
+        .click()
+        .get('[data-cy=current-bugs-container-northern]')
+        .get('[data-cy=current-fish-container-northern]')
+        .get('[data-cy=current-sea-creatures-container-northern]')
+    })
+
   })
