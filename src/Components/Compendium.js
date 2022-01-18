@@ -1,18 +1,19 @@
 import CritterCard from "./CritterCard";
+import PropTypes from "prop-types";
 import '../Styles/CritterContainers.css'
 
-const Compendium = ({ fish, seaCreatures, bugs }) => {
+const Compendium = ({ critters, caughtCritters, handleCritterChange }) => {
 
-    const allFish = fish.map((fish) => {
-        return <CritterCard key={fish.id} critter={fish} />
+    const allFish = critters.fish.map((fish) => {
+        return <CritterCard key={fish.id} critter={fish} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange} />
     })
 
-    const allSeaCreatures = seaCreatures.map((seaCreatures) => {
-        return <CritterCard key={seaCreatures.id} critter={seaCreatures} />
+    const allSeaCreatures = critters.seaCreatures.map((seaCreatures) => {
+        return <CritterCard key={seaCreatures.id} critter={seaCreatures} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 
-    const allBugs = bugs.map((bugs) => {
-        return <CritterCard key={bugs.id} critter={bugs} />
+    const allBugs = critters.bugs.map((bugs) => {
+        return <CritterCard key={bugs.id} critter={bugs} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 
     return (
@@ -31,6 +32,16 @@ const Compendium = ({ fish, seaCreatures, bugs }) => {
             </div>
         </main>
     )
+}
+
+Compendium.propTypes = {
+    critters: PropTypes.shape({
+        fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+        seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+        bugs: PropTypes.arrayOf(PropTypes.object).isRequired
+    }),
+    caughtCritters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    handleCritterChange: PropTypes.func.isRequired
 }
 
 export default Compendium

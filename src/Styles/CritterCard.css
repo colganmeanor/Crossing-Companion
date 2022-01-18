@@ -21,3 +21,9 @@
     width:auto;
     height: 50px;
 }
+
+.critter-caught-checkmark {
+    height: 50px;
+    position: absolute;
+    right: 6px;
+}

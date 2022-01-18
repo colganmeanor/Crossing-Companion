@@ -9,17 +9,29 @@ import apiCalls from './ApiCalls';
 import './App.css';
 import { dataOrg } from './utilities';
 
+
+
 const App = () => {
 
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [fish, setFish] = useState([])
-  const [seaCreatures, setSeaCreatures] = useState([])
-  const [bugs, setBugs] = useState([])
+  const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
+  const [caughtCritters, setCaughtCritters] = useState([])
 
-  const filterData = (data) => {
-    setFish(dataOrg(data[0]))
-    setSeaCreatures(dataOrg(data[1]))
-    setBugs(dataOrg(data[2]))
+  const catchCritter = (name) => {
+    let prevArray = caughtCritters
+    setCaughtCritters([...prevArray, name])
+  }
+
+  const removeCritter = (name) => {
+    let prevArray = caughtCritters
+    let newArray = prevArray.filter((item) => {
+      return item !== name
+    })
+    setCaughtCritters(newArray)
+  }
+
+  const handleCritterChange = (name) => {
+    caughtCritters.includes(name) ? removeCritter(name) : catchCritter(name)
   }
 
     useEffect(() => {
@@ -28,7 +40,7 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => filterData(data))
+          .then(data => setCritters({fish: dataOrg(data[0]), seaCreatures: dataOrg(data[1]), bugs: dataOrg(data[2])}))
     }, [])
 
   return (
@@ -38,17 +50,17 @@ const App = () => {
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
-          fish={fish} 
-          seaCreatures={seaCreatures} 
-          bugs={bugs} 
-          currentTime={currentTime} 
+          critters={critters}
+          currentTime={currentTime}
+          caughtCritters={caughtCritters}
+          handleCritterChange={handleCritterChange} 
           />} 
         />
         <Route path='/all-critters' element={
           <Compendium 
-          fish={fish} 
-          seaCreatures={seaCreatures} 
-          bugs={bugs} 
+          critters={critters}
+          caughtCritters={caughtCritters}
+          handleCritterChange={handleCritterChange}
           />} 
         />
       </Routes>

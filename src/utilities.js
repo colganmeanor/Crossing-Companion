@@ -25,4 +25,3 @@ export const dataOrg = (obj) => {
     })
     return result
 }
-  
