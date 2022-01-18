@@ -5,6 +5,7 @@ import Clock from './Components/Clock';
 import CurrentCritters from './Components/CurrentCritters';
 import Compendium from './Components/Compendium';
 import Footer from './Components/Footer';
+import Oops from './Components/Oops';
 import apiCalls from './ApiCalls';
 import './App.css';
 import { dataOrg } from './utilities';
@@ -74,6 +75,7 @@ const App = () => {
           handleCritterChange={handleCritterChange}
           />} 
         />
+        <Route path='*' element={<Oops />} />
       </Routes>
       <Footer />
     </div>
