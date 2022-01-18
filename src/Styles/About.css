@@ -9,3 +9,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.about-link {
+    font-weight: 800;
+    color: blue;
+}
