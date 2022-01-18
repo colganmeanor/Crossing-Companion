@@ -17,8 +17,8 @@ describe('Crossing Companion - Actions', () => {
     })
   
     it('should be able to click on a card to mark a critter as caught', () => {
-      cy.get('[data-cy=fish-critter-card]')
-        .contains('Dace')
+      cy.get('[data-cy=bug-critter-card]')
+        .contains('Wasp')
         .click()
         
         .get('[data-cy=critter-caught-checkmark]')
@@ -109,6 +109,14 @@ describe('Crossing Companion - Actions', () => {
         .get('[data-cy=current-bugs-container-northern]')
         .get('[data-cy=current-fish-container-northern]')
         .get('[data-cy=current-sea-creatures-container-northern]')
+    })
+
+    it('should be able to help the user if they navigate to a 404 error page', () => {
+        cy.visit('http://localhost:3000/best-critters')
+        .get('[data-cy=oops-link-current-critters]')
+        .click()
+        .url('http://localhost:3000/current-critters')
+
     })
 
   })
