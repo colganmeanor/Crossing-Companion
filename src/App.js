@@ -19,7 +19,7 @@ const App = () => {
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
   const [caughtCritters, setCaughtCritters] = useState([])
 
-  const errorMessage = <p className="fetch-error-message">We're having trouble fetching the data, please refresh or try again later.</p>
+  const errorMessage = <p data-cy='fetch-error-message' className="fetch-error-message">We're having trouble fetching the data, please refresh or try again later.</p>
 
 
   const catchCritter = (name) => {

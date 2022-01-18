@@ -157,3 +157,28 @@ describe('Crossing Companion - Oops Page - DOM', () => {
 
 
 })
+
+describe('Crossing Companion - No Data', () => {
+  beforeEach(() => {
+
+    cy.intercept('GET', 'v1/fish/', {
+        'body': {}
+    })
+
+    cy.intercept('GET', 'v1/sea/', {
+      'body': {}
+  })
+
+  cy.intercept('GET', 'v1/bugs/', {
+    'body': {}
+})
+
+    cy.visit('http://localhost:3000/all-critters')
+  })
+
+  it('should show a message to the user if data fails to load for some reason', () => {
+    cy.get('[data-cy=fetch-error-message]')
+    .should('have.length', 3)
+  })
+
+})
