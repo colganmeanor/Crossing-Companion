@@ -5,20 +5,19 @@ import { findCurrentCritters } from "../utilities";
 import '../Styles/CritterContainers.css'
 
 
-const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterChange }) => {
+const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterChange, errorMessage }) => {
 
     const [hemisphere, setHemi] = useState('northern')
-
       
-    const currentFish = findCurrentCritters(critters.fish, currentTime, hemisphere) 
+    const currentFish = critters.fish.length === 0 ? errorMessage : findCurrentCritters(critters.fish, currentTime, hemisphere) 
     .map((fish) => {
         return <CritterCard key={fish.id} critter={fish} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange} />
     })
-    const currentSeaCreatures = findCurrentCritters(critters.seaCreatures, currentTime, hemisphere)
+    const currentSeaCreatures = critters.seaCreatures.length === 0 ? errorMessage : findCurrentCritters(critters.seaCreatures, currentTime, hemisphere)
     .map((seaCreatures) => {
         return <CritterCard key={seaCreatures.id} critter={seaCreatures} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
-    const currentBugs = findCurrentCritters(critters.bugs, currentTime, hemisphere)
+    const currentBugs = critters.bugs.length === 0 ? errorMessage : findCurrentCritters(critters.bugs, currentTime, hemisphere)
     .map((bugs) => {
         return <CritterCard key={bugs.id} critter={bugs} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
@@ -27,19 +26,19 @@ const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterC
     return (
         <main>
             <div className="hemisphere-selection">
-                <button data-cy='set-northern' onClick={() => {setHemi('northern')}}>Northern Hemisphere</button>
-                <button data-cy='set-southern' onClick={() => {setHemi('southern')}}>Southern Hemisphere</button>
+                <button className="set-hemisphere-button" data-cy='set-northern' onClick={() => {setHemi('northern')}}>Northern Hemisphere</button>
+                <button className="set-hemisphere-button" data-cy='set-southern' onClick={() => {setHemi('southern')}}>Southern Hemisphere</button>
             </div>
-            <p className="critter-title" data-cy={`current-fish-container-${hemisphere}`}>CURRENT FISH:</p>
-            <div className="current-critters">
+            <p className="critter-title">CURRENT FISH:</p>
+            <div className="critter-container" data-cy={`current-fish-container-${hemisphere}`}>
                 {currentFish}
             </div>
-            <p className="critter-title" data-cy={`current-sea-creatures-container-${hemisphere}`}>CURRENT SEA CREATURES:</p>
-            <div className="current-critters">
+            <p className="critter-title" >CURRENT SEA CREATURES:</p>
+            <div className="critter-container" data-cy={`current-sea-creatures-container-${hemisphere}`}>
                 {currentSeaCreatures}
             </div>
-            <p className="critter-title" data-cy={`current-bugs-container-${hemisphere}`}>CURRENT BUGS:</p>
-            <div className="current-critters">
+            <p className="critter-title" >CURRENT BUGS:</p>
+            <div className="critter-container" data-cy={`current-bugs-container-${hemisphere}`}>
                 {currentBugs}
             </div>
         </main>

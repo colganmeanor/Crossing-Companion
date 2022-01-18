@@ -5,6 +5,7 @@
     height: 115px;
     overflow-x:auto;
     background: white;
+    margin-top: 7px;
 }
 
 .critter-card:hover{
@@ -12,10 +13,6 @@
     cursor: pointer;
 }
 
-
-.critter-image-container{
-
-}
 
 .critter-icon{
     width:auto;

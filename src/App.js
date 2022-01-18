@@ -2,9 +2,11 @@ import {useState, useEffect} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Clock from './Components/Clock';
+import About from './Components/About';
 import CurrentCritters from './Components/CurrentCritters';
 import Compendium from './Components/Compendium';
 import Footer from './Components/Footer';
+import Oops from './Components/Oops';
 import apiCalls from './ApiCalls';
 import './App.css';
 import { dataOrg } from './utilities';
@@ -16,6 +18,9 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
   const [caughtCritters, setCaughtCritters] = useState([])
+
+  const errorMessage = <p className="fetch-error-message">We're having trouble fetching the data, please refresh or try again later.</p>
+
 
   const catchCritter = (name) => {
     let prevArray = caughtCritters
@@ -51,20 +56,24 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])}))
+          .then(data => 
+            setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])}))
     }, [])
 
   return (
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
+
       <Routes>
-        <Route path='/' element={
+        <Route path='/' element={<About />} />
+        <Route path='/current-critters' element={
           <CurrentCritters 
           critters={critters}
           currentTime={currentTime}
           caughtCritters={caughtCritters}
-          handleCritterChange={handleCritterChange} 
+          handleCritterChange={handleCritterChange}
+          errorMessage={errorMessage} 
           />} 
         />
         <Route path='/all-critters' element={
@@ -72,8 +81,10 @@ const App = () => {
           critters={critters}
           caughtCritters={caughtCritters}
           handleCritterChange={handleCritterChange}
+          errorMessage={errorMessage}
           />} 
         />
+        <Route path='*' element={<Oops />} />
       </Routes>
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 .header {
     border-bottom: solid black 1px;
-    background: #4e9ce4;
+    background: white;
     height: 7%;
     width: 100%;
     display: flex;
@@ -21,14 +21,14 @@
 }
 
 .nav-active {
-    color: black;
-    background-color: white;
+    color: purple;
+    /* background-color: white; */
     padding: 16px 28px;
 }
 
 .inactive {
-    color: white;
-    background-color: #4e9ce4;
+    color: black;
+    /* background-color: #4e9ce4; */
     padding: 16px 28px;
 }
 

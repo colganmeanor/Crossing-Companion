@@ -2,32 +2,33 @@ import CritterCard from "./CritterCard";
 import PropTypes from "prop-types";
 import '../Styles/CritterContainers.css'
 
-const Compendium = ({ critters, caughtCritters, handleCritterChange }) => {
+const Compendium = ({ critters, caughtCritters, handleCritterChange, errorMessage }) => {
 
-    const allFish = critters.fish.map((fish) => {
+
+    const allFish = critters.fish.length === 0 ? errorMessage : critters.fish.map((fish) => {
         return <CritterCard key={fish.id} critter={fish} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange} />
     })
 
-    const allSeaCreatures = critters.seaCreatures.map((seaCreatures) => {
+    const allSeaCreatures = critters.seaCreatures.length === 0 ? errorMessage : critters.seaCreatures.map((seaCreatures) => {
         return <CritterCard key={seaCreatures.id} critter={seaCreatures} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 
-    const allBugs = critters.bugs.map((bugs) => {
+    const allBugs = critters.bugs.length === 0 ? errorMessage : critters.bugs.map((bugs) => {
         return <CritterCard key={bugs.id} critter={bugs} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 
     return (
         <main>
             <p className="critter-title">ALL FISH:</p>
-            <div className="current-critters" data-cy='all-fish-container'>
+            <div className="critter-container" data-cy='all-fish-container'>
                 {allFish}
             </div>
             <p className="critter-title" data-cy='all-sea-creatures-container'>ALL SEA CREATURES:</p>
-            <div className="current-critters">
+            <div className="critter-container">
                 {allSeaCreatures}
             </div>
             <p className="critter-title" data-cy='all-bugs-container'>ALL BUGS:</p>
-            <div className="current-critters">
+            <div className="critter-container">
                 {allBugs}
             </div>
         </main>
