@@ -39,7 +39,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
   })
 
   it('should have a current fish section', () => {
-    cy.get('[data-cy=current-fish-container]')
+    cy.get('[data-cy=current-fish-container-northern]')
       .should('exist')
       .get('[data-cy=fish-critter-card]')
       .should('exist')
@@ -47,7 +47,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
   })
 
   it('should have a current sea creatures section', () => {
-    cy.get('[data-cy=current-sea-creatures-container]')
+    cy.get('[data-cy=current-sea-creatures-container-northern]')
       .should('exist')
 
       .get('[data-cy=sea-creature-critter-card]')
@@ -55,7 +55,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
   })
   
   it('should have a current bugs section', () => {
-    cy.get('[data-cy=current-bugs-container]')
+    cy.get('[data-cy=current-bugs-container-northern]')
       .should('exist')
 
       .get('[data-cy=bug-critter-card]')
