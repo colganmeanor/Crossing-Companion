@@ -14,3 +14,14 @@
 .critter-title{
     font-weight: 700;
 }
+
+.hemisphere-selection {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.set-hemisphere-button {
+    background: white;
+    color: black;
+    border: solid black 1px;
+}
