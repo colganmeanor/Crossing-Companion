@@ -17,6 +17,7 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
   const [caughtCritters, setCaughtCritters] = useState([])
+  const [error, setError] = useState('')
 
   const catchCritter = (name) => {
     let prevArray = caughtCritters
@@ -52,13 +53,20 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])}))
+          .then(data => {
+            if(data) {
+              setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])})
+            } else {
+              setError(data)
+            }
+          })
     }, [])
 
   return (
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
+
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
