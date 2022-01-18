@@ -1,3 +1,42 @@
+describe('Crossing Companion - About/Home Page - DOM', () => {
+  beforeEach(() => {
+
+    cy.intercept('GET', 'v1/fish/', {
+        fixture: 'fish.json'
+    })
+
+    cy.intercept('GET', 'v1/sea/', {
+      fixture: 'seacreatures.json'
+  })
+
+  cy.intercept('GET', 'v1/bugs/', {
+    fixture: 'bugs.json'
+})
+
+    cy.visit('http://localhost:3000/')
+  })
+
+  it('should display the current time and date', () => {
+    cy.get('[data-cy=clock-display]')
+      .should('exist')
+      .get('[data-cy=clock-time]')
+      .get('[data-cy=clock-date]')
+  })
+
+  it('should display the About Component', () => {
+    cy.get('[data-cy=about-section')
+      .should('exist')
+  })
+
+  it('should show links to navigate around the site inside the about component', () => {
+    cy.get('[data-cy=current-critters-link]')
+      .should('exist')
+
+      .get('[data-cy=all-critters-link]')
+      .should('exist')
+  })
+
+})
 
 
 describe('Crossing Companion - Current Critters - DOM', () => {
@@ -15,7 +54,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
     fixture: 'bugs.json'
 })
 
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/current-critters')
   })
 
   it('should display the current time and date', () => {

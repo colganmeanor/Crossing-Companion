@@ -33,7 +33,7 @@ describe('Crossing Companion - Actions', () => {
         .contains('Wasp')
         .get('[data-cy=critter-caught-checkmark]')
 
-        .visit('http://localhost:3000/')
+        .visit('http://localhost:3000/current-critters')
 
         .get('[data-cy=bug-critter-card')
         .contains('Wasp')
@@ -76,7 +76,7 @@ describe('Crossing Companion - Actions', () => {
     it('should be able to navigate using the header nav links', () => {
         cy.get('[data-cy=current-critters-nav-link]')
         .click()
-        .url('http://localhost:3000/')
+        .url('http://localhost:3000/current-critters')
 
         .get('[data-cy=all-critters-nav-link]')
         .click()
@@ -85,15 +85,15 @@ describe('Crossing Companion - Actions', () => {
 
     it('should be able to navigate using the back and forward buttons', () => {
         cy.visit('http://localhost:3000/')
-        .url('http://localhost:3000/')
+        .url('http://localhost:3000/current-critters')
         cy.go('back')
         .url('http://localhost:3000/all-critters')
         cy.go('forward')
-        .url('http://localhost:3000')
+        .url('http://localhost:3000/current-critters')
     })
   
     it('should be able to click the Northern and Southern Hemisphere buttons and see different results', () => {
-        cy.visit('http://localhost:3000/')
+        cy.visit('http://localhost:3000/current-critters')
         .get('[data-cy=current-bugs-container-northern]')
         .get('[data-cy=current-fish-container-northern]')
         .get('[data-cy=current-sea-creatures-container-northern]')
