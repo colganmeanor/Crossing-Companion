@@ -1,4 +1,4 @@
-.current-critters {
+.critter-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(8rem, 3fr));

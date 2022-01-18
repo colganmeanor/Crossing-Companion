@@ -30,16 +30,16 @@ const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterC
                 <button data-cy='set-northern' onClick={() => {setHemi('northern')}}>Northern Hemisphere</button>
                 <button data-cy='set-southern' onClick={() => {setHemi('southern')}}>Southern Hemisphere</button>
             </div>
-            <p className="critter-title" data-cy={`current-fish-container-${hemisphere}`}>CURRENT FISH:</p>
-            <div className="current-critters">
+            <p className="critter-title">CURRENT FISH:</p>
+            <div className="critter-container" data-cy={`current-fish-container-${hemisphere}`}>
                 {currentFish}
             </div>
-            <p className="critter-title" data-cy={`current-sea-creatures-container-${hemisphere}`}>CURRENT SEA CREATURES:</p>
-            <div className="current-critters">
+            <p className="critter-title" >CURRENT SEA CREATURES:</p>
+            <div className="critter-container" data-cy={`current-sea-creatures-container-${hemisphere}`}>
                 {currentSeaCreatures}
             </div>
-            <p className="critter-title" data-cy={`current-bugs-container-${hemisphere}`}>CURRENT BUGS:</p>
-            <div className="current-critters">
+            <p className="critter-title" >CURRENT BUGS:</p>
+            <div className="critter-container" data-cy={`current-bugs-container-${hemisphere}`}>
                 {currentBugs}
             </div>
         </main>
