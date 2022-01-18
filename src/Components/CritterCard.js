@@ -16,9 +16,9 @@ const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
     }, [caughtCritters])
     
     return (
-        <article data-cy={`${critter.type}-critter-card`} className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
+        <article aria-label={`${critter.displayName} critter card`} data-cy={`${critter.type}-critter-card`} className="critter-card" onClick={() => handleCritterChange(critter.displayName)}>
             <div className="critter-image-container">
-                {caughtStatus && <img data-cy='critter-caught-checkmark' className='critter-caught-checkmark' src={greenCheck} alt='green-checkmark'></img>}
+                {caughtStatus && <img data-cy='critter-caught-checkmark' className='critter-caught-checkmark' src={greenCheck} alt='green checkmark icon'></img>}
                 <img data-cy='critter-icon' className="critter-icon" src={critter['icon_uri']} alt={`${critter.displayName} icon`}></img>
             </div>
             <p data-cy='critter-name'>{critter.displayName}</p>
