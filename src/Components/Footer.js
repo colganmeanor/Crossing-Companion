@@ -2,7 +2,7 @@ import '../Styles/Footer.css'
 
 const Footer = () => {
     return(
-        <footer>
+        <footer data-cy='footer'>
             <p>Crossing Companion - By Colgan Meanor</p>
             <a href='https://github.com/colganmeanor'>GitHub</a>
             <a href='https://www.linkedin.com/in/colgan-meanor/'>LinkedIn</a>
