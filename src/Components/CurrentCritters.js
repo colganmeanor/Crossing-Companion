@@ -46,11 +46,15 @@ const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterC
     )
 }
 
-// CurrentCritters.propTypes = {
-//     fish: PropTypes.arrayOf(PropTypes.object).isRequired,
-//     seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
-//     bugs: PropTypes.arrayOf(PropTypes.object).isRequired,
-//     currentTime: PropTypes.object.isRequired
-// }
+CurrentCritters.propTypes = {
+    critters: PropTypes.shape({
+        fish: PropTypes.arrayOf(PropTypes.object).isRequired,
+        seaCreatures: PropTypes.arrayOf(PropTypes.object).isRequired,
+        bugs: PropTypes.arrayOf(PropTypes.object).isRequired
+    }),
+    currentTime: PropTypes.object.isRequired,
+    caughtCritters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    handleCritterChange: PropTypes.func.isRequired
+}
 
 export default CurrentCritters

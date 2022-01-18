@@ -30,7 +30,9 @@ CritterCard.propTypes = {
     critter: PropTypes.shape({
         'icon_uri': PropTypes.string,
         displayName: PropTypes.string
-      }).isRequired
+      }).isRequired,
+    caughtCritters: PropTypes.arrayOf(PropTypes.string).isRequired,
+    handleCritterChange: PropTypes.func.isRequired
 }
 
 export default CritterCard
