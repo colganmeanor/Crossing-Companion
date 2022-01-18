@@ -2,17 +2,18 @@ import CritterCard from "./CritterCard";
 import PropTypes from "prop-types";
 import '../Styles/CritterContainers.css'
 
-const Compendium = ({ critters, caughtCritters, handleCritterChange }) => {
+const Compendium = ({ critters, caughtCritters, handleCritterChange, errorMessage }) => {
 
-    const allFish = critters.fish.map((fish) => {
+
+    const allFish = critters.fish.length === 0 ? errorMessage : critters.fish.map((fish) => {
         return <CritterCard key={fish.id} critter={fish} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange} />
     })
 
-    const allSeaCreatures = critters.seaCreatures.map((seaCreatures) => {
+    const allSeaCreatures = critters.seaCreatures.length === 0 ? errorMessage : critters.seaCreatures.map((seaCreatures) => {
         return <CritterCard key={seaCreatures.id} critter={seaCreatures} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 
-    const allBugs = critters.bugs.map((bugs) => {
+    const allBugs = critters.bugs.length === 0 ? errorMessage : critters.bugs.map((bugs) => {
         return <CritterCard key={bugs.id} critter={bugs} caughtCritters={caughtCritters} handleCritterChange={handleCritterChange}/>
     })
 

@@ -17,7 +17,9 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [critters, setCritters] = useState({fish: [], seaCreatures: [], bugs: []})
   const [caughtCritters, setCaughtCritters] = useState([])
-  const [error, setError] = useState('')
+
+  const errorMessage = <p className="fetch-error-message">We're having trouble fetching the data, please refresh or try again later.</p>
+
 
   const catchCritter = (name) => {
     let prevArray = caughtCritters
@@ -53,13 +55,8 @@ const App = () => {
 
     useEffect(() => {
         Promise.all([apiCalls.loadFish(), apiCalls.loadSeaCreatures(), apiCalls.loadBugs()])
-          .then(data => {
-            if(data) {
-              setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])})
-            } else {
-              setError(data)
-            }
-          })
+          .then(data => 
+            setCritters({fish: dataOrg('fish', data[0]), seaCreatures: dataOrg('sea-creature', data[1]), bugs: dataOrg('bug', data[2])}))
     }, [])
 
   return (
@@ -73,7 +70,8 @@ const App = () => {
           critters={critters}
           currentTime={currentTime}
           caughtCritters={caughtCritters}
-          handleCritterChange={handleCritterChange} 
+          handleCritterChange={handleCritterChange}
+          errorMessage={errorMessage} 
           />} 
         />
         <Route path='/all-critters' element={
@@ -81,6 +79,7 @@ const App = () => {
           critters={critters}
           caughtCritters={caughtCritters}
           handleCritterChange={handleCritterChange}
+          errorMessage={errorMessage}
           />} 
         />
         <Route path='*' element={<Oops />} />
