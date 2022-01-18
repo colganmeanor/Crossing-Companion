@@ -20,17 +20,17 @@ const Compendium = ({ critters, caughtCritters, handleCritterChange, errorMessag
     return (
         <main>
             <p className="critter-title">ALL FISH:</p>
-            <div className="critter-container" data-cy='all-fish-container'>
+            <section aria-label ='All Fish Section' className="critter-container" data-cy='all-fish-container'>
                 {allFish}
-            </div>
-            <p className="critter-title" data-cy='all-sea-creatures-container'>ALL SEA CREATURES:</p>
-            <div className="critter-container">
+            </section>
+            <p className="critter-title" >ALL SEA CREATURES:</p>
+            <section aria-label ='All Sea Creatures Section' className="critter-container" data-cy='all-sea-creatures-container'>
                 {allSeaCreatures}
-            </div>
-            <p className="critter-title" data-cy='all-bugs-container'>ALL BUGS:</p>
-            <div className="critter-container">
+            </section>
+            <p className="critter-title">ALL BUGS:</p>
+            <section aria-label ='All Bugs Section' className="critter-container" data-cy='all-bugs-container'>
                 {allBugs}
-            </div>
+            </section>
         </main>
     )
 }

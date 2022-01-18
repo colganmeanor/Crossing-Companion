@@ -25,22 +25,22 @@ const CurrentCritters = ({ critters, currentTime, caughtCritters, handleCritterC
 
     return (
         <main>
-            <div className="hemisphere-selection">
-                <button className="set-hemisphere-button" data-cy='set-northern' onClick={() => {setHemi('northern')}}>Northern Hemisphere</button>
-                <button className="set-hemisphere-button" data-cy='set-southern' onClick={() => {setHemi('southern')}}>Southern Hemisphere</button>
+            <div aria-label='Hemisphere Button Selection Section' className="hemisphere-selection">
+                <button aria-label='Set Northern Hemisphere' className="set-hemisphere-button" data-cy='set-northern' onClick={() => {setHemi('northern')}}>Northern Hemisphere</button>
+                <button aria-label='Set Southern Hemisphere' className="set-hemisphere-button" data-cy='set-southern' onClick={() => {setHemi('southern')}}>Southern Hemisphere</button>
             </div>
             <p className="critter-title">CURRENT FISH:</p>
-            <div className="critter-container" data-cy={`current-fish-container-${hemisphere}`}>
+            <section aria-label ='Current Fish Section' className="critter-container" data-cy={`current-fish-container-${hemisphere}`}>
                 {currentFish}
-            </div>
+            </section>
             <p className="critter-title" >CURRENT SEA CREATURES:</p>
-            <div className="critter-container" data-cy={`current-sea-creatures-container-${hemisphere}`}>
+            <section aria-label ='Current Sea Creature Section' className="critter-container" data-cy={`current-sea-creatures-container-${hemisphere}`}>
                 {currentSeaCreatures}
-            </div>
+            </section>
             <p className="critter-title" >CURRENT BUGS:</p>
-            <div className="critter-container" data-cy={`current-bugs-container-${hemisphere}`}>
+            <section aria-label ='Current Bug Section' className="critter-container" data-cy={`current-bugs-container-${hemisphere}`}>
                 {currentBugs}
-            </div>
+            </section>
         </main>
     )
 }
