@@ -37,7 +37,6 @@
     color: black;
 }
 
-
 @media only screen and (max-width: 1425px) {
     .nav-active {
         padding: 8px 28px;

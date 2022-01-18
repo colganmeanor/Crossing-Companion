@@ -8,7 +8,7 @@ import Footer from './Components/Footer';
 import apiCalls from './ApiCalls';
 import './App.css';
 import { dataOrg } from './utilities';
-import cloud1 from './images/cloud1.svg'
+
 
 
 const App = () => {
@@ -47,7 +47,6 @@ const App = () => {
     <div className="App">
       <Header />
       <Clock currentTime={currentTime}/>
-      <img className='cloud-one' src={cloud1}/>
       <Routes>
         <Route path='/' element={
           <CurrentCritters 
