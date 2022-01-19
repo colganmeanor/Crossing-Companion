@@ -7,3 +7,13 @@ footer {
     justify-content: center;
     width: 100%;
 }
+
+@media screen and (max-width: 800px) {
+    footer {
+        height: auto;
+        width: 100%;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+}

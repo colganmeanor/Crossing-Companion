@@ -18,3 +18,12 @@
     font-weight: 800;
     color: blue;
 }
+
+@media screen and (max-width: 800px) {
+    .about-section {
+        height: auto;
+        width: 80%;
+        margin: auto;
+    }
+
+}
