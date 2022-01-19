@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Crossing-Companion/static/css/main.a49f298b.css",
+    "main.css": "/Crossing-Companion/static/css/main.df58c3b6.css",
     "main.js": "/Crossing-Companion/static/js/main.454fe19e.js",
     "static/js/787.bcfee264.chunk.js": "/Crossing-Companion/static/js/787.bcfee264.chunk.js",
     "static/media/green-check-mark.svg": "/Crossing-Companion/static/media/green-check-mark.d0bc83453da508dfe2e6e321122b0d1e.svg",
     "index.html": "/Crossing-Companion/index.html",
-    "main.a49f298b.css.map": "/Crossing-Companion/static/css/main.a49f298b.css.map",
+    "main.df58c3b6.css.map": "/Crossing-Companion/static/css/main.df58c3b6.css.map",
     "main.454fe19e.js.map": "/Crossing-Companion/static/js/main.454fe19e.js.map",
     "787.bcfee264.chunk.js.map": "/Crossing-Companion/static/js/787.bcfee264.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a49f298b.css",
+    "static/css/main.df58c3b6.css",
     "static/js/main.454fe19e.js"
   ]
 }
