@@ -1,6 +1,6 @@
 const apiCalls = {
     loadFish: () => {
-        return fetch('http://acnhapi.com/v1/fish/')
+        return fetch('https://acnhapi.com/v1/fish/')
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -12,7 +12,7 @@ const apiCalls = {
     },
 
     loadSeaCreatures: () => {
-        return fetch('http://acnhapi.com/v1/sea/')
+        return fetch('https://acnhapi.com/v1/sea/')
             .then(res => {
                 if (res.ok) {
                     return res.json()
@@ -24,7 +24,7 @@ const apiCalls = {
     },
 
     loadBugs: () => {
-        return fetch('http://acnhapi.com/v1/bugs/')
+        return fetch('https://acnhapi.com/v1/bugs/')
             .then(res => {
                 if (res.ok) {
                     return res.json()
