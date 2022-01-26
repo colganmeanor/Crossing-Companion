@@ -13,7 +13,7 @@ describe('Crossing Companion - About/Home Page - DOM', () => {
     fixture: 'bugs.json'
 })
 
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/Crossing-Companion#/')
   })
 
   it('should display the current time and date', () => {
@@ -54,7 +54,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
     fixture: 'bugs.json'
 })
 
-    cy.visit('http://localhost:3000/current-critters')
+    cy.visit('http://localhost:3000/Crossing-Companion#/current-critters')
   })
 
   it('should display the current time and date', () => {
@@ -112,7 +112,7 @@ describe('Crossing Companion - Current Critters - DOM', () => {
 describe('Crossing Companion - All Critters - DOM', () => {
   beforeEach(() => {
 
-    cy.visit('http://localhost:3000/all-critters')
+    cy.visit('http://localhost:3000/Crossing-Companion#/all-critters')
   })
 
   it('should show all fish', () => {
@@ -135,7 +135,7 @@ describe('Crossing Companion - All Critters - DOM', () => {
 describe('Crossing Companion - Oops Page - DOM', () => {
   beforeEach(() => {
 
-    cy.visit('http://localhost:3000/best-critters')
+    cy.visit('http://localhost:3000/Crossing-Companion#/best-critters')
   })
 
   it('should show a prominent 404 Page not Found message', () => {
@@ -173,7 +173,7 @@ describe('Crossing Companion - No Data', () => {
     'body': {}
 })
 
-    cy.visit('http://localhost:3000/all-critters')
+    cy.visit('http://localhost:3000/Crossing-Companion#/all-critters')
   })
 
   it('should show a message to the user if data fails to load for some reason', () => {
