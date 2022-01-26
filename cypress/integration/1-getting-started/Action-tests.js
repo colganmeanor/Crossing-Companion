@@ -13,7 +13,7 @@ describe('Crossing Companion - Actions', () => {
       fixture: 'bugs.json'
   })
   
-      cy.visit('http://localhost:3000/all-critters')
+      cy.visit('http://localhost:3000/Crossing-Companion#/all-critters')
     })
   
     it('should be able to click on a card to mark a critter as caught', () => {
@@ -33,7 +33,7 @@ describe('Crossing Companion - Actions', () => {
         .contains('Wasp')
         .get('[data-cy=critter-caught-checkmark]')
 
-        .visit('http://localhost:3000/current-critters')
+        .visit('http://localhost:3000/Crossing-Companion#/current-critters')
 
         .get('[data-cy=bug-critter-card')
         .contains('Wasp')
@@ -76,24 +76,24 @@ describe('Crossing Companion - Actions', () => {
     it('should be able to navigate using the header nav links', () => {
         cy.get('[data-cy=current-critters-nav-link]')
         .click()
-        .url('http://localhost:3000/current-critters')
+        .url('http://localhost:3000/Crossing-Companion#/current-critters')
 
         .get('[data-cy=all-critters-nav-link]')
         .click()
-        .url('http://localhost:3000/all-critters')
+        .url('http://localhost:3000/Crossing-Companion#/all-critters')
     })
 
     it('should be able to navigate using the back and forward buttons', () => {
         cy.visit('http://localhost:3000/')
-        .url('http://localhost:3000/current-critters')
+        .url('http://localhost:3000/Crossing-Companion#/current-critters')
         cy.go('back')
-        .url('http://localhost:3000/all-critters')
+        .url('http://localhost:3000/Crossing-Companion#/all-critters')
         cy.go('forward')
-        .url('http://localhost:3000/current-critters')
+        .url('http://localhost:3000/Crossing-Companion#/current-critters')
     })
   
     it('should be able to click the Northern and Southern Hemisphere buttons and see different results', () => {
-        cy.visit('http://localhost:3000/current-critters')
+        cy.visit('http://localhost:3000/Crossing-Companion#/current-critters')
         .get('[data-cy=current-bugs-container-northern]')
         .get('[data-cy=current-fish-container-northern]')
         .get('[data-cy=current-sea-creatures-container-northern]')
@@ -112,10 +112,10 @@ describe('Crossing Companion - Actions', () => {
     })
 
     it('should be able to help the user if they navigate to a 404 error page', () => {
-        cy.visit('http://localhost:3000/best-critters')
+        cy.visit('http://localhost:3000/Crossing-Companion#/best-critters')
         .get('[data-cy=oops-link-current-critters]')
         .click()
-        .url('http://localhost:3000/current-critters')
+        .url('http://localhost:3000/Crossing-Companion#/current-critters')
 
     })
 

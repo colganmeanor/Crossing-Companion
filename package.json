@@ -20,7 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "start-server-and-test start http://localhost:3000 cypress",
+    "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "cypress": "cypress open"
   },
