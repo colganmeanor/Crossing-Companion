@@ -20,12 +20,12 @@ cache:
     - ~/.cache
   # install dependencies and check that Cypress can run
   override:
-    - npm ci
+    - travis_wait npm ci
     - npm run cy:verify
 
 script:
   # start server in the background
-  - travis_wait npm run start
+  - npm run start
   # run all Cypress tests and record on the dashboard
   - npm run cy:run -- --record --key b602b4d5-1d12-4b54-a76a-09c920fe5087
   # after all tests finish running we need
