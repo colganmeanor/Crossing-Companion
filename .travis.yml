@@ -2,7 +2,7 @@ language: node_js
 
 node_js:
   # Node 10.3+ includes npm@6 which has good "npm ci" command
-  - 10.8
+  - "node"
 
 # if using Ubuntu 16 need this library
 # https://github.com/cypress-io/cypress-documentation/pull/1647
@@ -13,8 +13,10 @@ addons:
 
 cache:
   # cache both npm modules and Cypress binary
+  npm: true
   directories:
     - ~/.npm
+    - ./node_modules
     - ~/.cache
   # install dependencies and check that Cypress can run
   override:
