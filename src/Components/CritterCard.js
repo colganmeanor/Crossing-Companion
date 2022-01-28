@@ -13,6 +13,7 @@ const CritterCard = ({critter, caughtCritters, handleCritterChange }) => {
 
     useEffect(() => {
         caughtTracker(caughtCritters)
+        // eslint-disable-next-line
     }, [caughtCritters])
     
     return (
