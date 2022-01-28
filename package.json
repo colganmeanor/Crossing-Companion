@@ -16,11 +16,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record --key b602b4d5-1d12-4b54-a76a-09c920fe5087",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "start-server-and-test start http://localhost:3000 cy:run -- --record --key b602b4d5-1d12-4b54-a76a-09c920fe5087",
+    "test": "start-server-and-test start http://localhost:3000 cy:run",
     "eject": "react-scripts eject",
     "cypress": "cypress open"
   },
